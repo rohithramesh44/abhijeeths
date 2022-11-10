@@ -14,6 +14,17 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-family: 'Poppins', sans-serif;
         color: #2f3542;
+        @media (max-width: 992px){
+            font-size: 57% ;
+         }
+        @media (max-width: 768px){
+            font-size: 50% !important;
+         }
+        @media (max-width: 576px){
+            font-size: 40% !important;
+         }
+         
+
     }
     h1{
         font-size: 4.8rem;

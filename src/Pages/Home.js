@@ -23,11 +23,11 @@ const HomePage = styled.section`
   display: grid;
   grid-template-columns: minmax(min-content, 1fr);
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 
   div {
     text-align: center;
-    width: 70%;
+    width: 75%;
     justify-self: center;
     h1 {
       margin-bottom: 2rem;

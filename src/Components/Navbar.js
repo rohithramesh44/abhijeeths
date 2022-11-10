@@ -7,6 +7,9 @@ function Navbar() {
   return (
     <Container>
       <NavbarStyle>
+        <div className="menu-icon">
+          <span></span>
+        </div>
         <ul>
           <li>
             <a to="/">home</a>
@@ -24,21 +27,63 @@ function Navbar() {
             <a to="/">Contact</a>
           </li>
         </ul>
+        <div></div>
       </NavbarStyle>
     </Container>
   );
 }
 const NavbarStyle = styled.div`
   min-height: 20vh;
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  .menu-icon {
+    width: 4rem;
+    height: 3rem;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+    cursor: pointer;
+    span {
+      width: 100%;
+      height: 5px;
+      display: inline-block;
+      background-color: ${(props) => props.theme.colors.black};
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 5px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: ${(props) => props.theme.colors.black};
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 5px;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: ${(props) => props.theme.colors.black};
+      }
+    }
+  }
 
   ul {
-    display: grid;
-    grid-template-columns: repeat(5, min-content);
+    width: 100%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-
     list-style: none;
 
     li {
@@ -50,8 +95,17 @@ const NavbarStyle = styled.div`
       z-index: 1;
       cursor: pointer;
       transition: color 0.3s ease-in-out;
+      &:hover {
+        color: ${(props) => props.theme.colors.white};
+      }
       &:active {
         color: ${(props) => props.theme.colors.blackLi};
+      }
+      @media (max-width: 900px) {
+        padding: 1.2rem 2.4rem;
+      }
+      @media (max-width: 768px) {
+        display: none;
       }
     }
     li::before {
@@ -63,7 +117,7 @@ const NavbarStyle = styled.div`
       bottom: 0;
       left: 0;
       z-index: -3;
-      background-color: ${(props) => props.theme.colors.offWhite};
+      background-color: ${(props) => props.theme.colors.black};
       transition: all 0.1s ease-in-out;
     }
 
@@ -71,14 +125,18 @@ const NavbarStyle = styled.div`
       height: 100%;
       transform: skew(0deg);
     }
+
+    /* @media (max-width: 1200px) {
+      font-size: 4rem !important;
+    } */
   }
 `;
 
-const Logo = styled.li`
+const Logo = styled.span`
   font-size: 4.8rem !important;
   text-transform: capitalize;
+  display: block;
   text-align: center;
-  min-width: 30rem;
   &:hover {
     color: #2f3542 !important;
   }
@@ -88,6 +146,15 @@ const Logo = styled.li`
   &:hover::before {
     height: 0 !important;
     background-color: transparent !important;
+  }
+  @media (max-width: 900px) {
+    font-size: 3.8rem !important;
+  }
+  @media (max-width: 1200px) {
+    font-size: 4rem !important;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 export default Navbar;
