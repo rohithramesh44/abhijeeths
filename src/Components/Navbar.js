@@ -137,6 +137,7 @@ const Logo = styled.span`
   text-transform: capitalize;
   display: block;
   text-align: center;
+  cursor: pointer;
   &:hover {
     color: #2f3542 !important;
   }
