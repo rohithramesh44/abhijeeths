@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
-
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import GlobalStyle from "./Components/GlobalStyle";
@@ -20,8 +20,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Navbar />
-        <Home />
+        <AnimatePresence>
+          <Navbar />
+          <Home />
+        </AnimatePresence>
       </>
     </ThemeProvider>
   );

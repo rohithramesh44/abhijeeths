@@ -1,37 +1,122 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { menuSliderAni, itemAni } from "../Animations";
 import { Link, Router } from "react-router-dom";
 import { Container } from "../style";
 
 function Navbar() {
+  const [openMode, setOpenMode] = useState(false);
+  console.log(openMode);
   return (
     <Container>
       <NavbarStyle>
-        <div className="menu-icon">
+        <div className="menu-icon" onClick={() => setOpenMode(true)}>
           <span></span>
         </div>
-        <ul>
-          <li>
+        <ul className="main-nav-list hidden">
+          <li className="main-nav-item hidden">
             <a to="/">home</a>
           </li>
-          <li>
+          <li className="main-nav-item hidden">
             <a to="/">portfolio</a>
           </li>
           <Logo>
             <a to="/">Abhijeeth S</a>
           </Logo>
-          <li>
+          <li className="main-nav-item hidden">
             <a to="/">About</a>
           </li>
-          <li>
+          <li className="main-nav-item hidden">
             <a to="/">Contact</a>
           </li>
         </ul>
-        <div></div>
+        <AnimatePresence>
+          {openMode && (
+            <OpenMenu
+              variants={menuSliderAni}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
+              <MotionNav>
+                <motion.li variants={itemAni} className="main-nav-item">
+                  <a to="/">home</a>
+                </motion.li>
+                <motion.li variants={itemAni} className="main-nav-item">
+                  <a to="/">portfolio</a>
+                </motion.li>
+                <motion.li variants={itemAni} className="main-nav-item">
+                  <a to="/">About</a>
+                </motion.li>
+                <motion.li variants={itemAni} className="main-nav-item">
+                  <a to="/">Contact</a>
+                </motion.li>
+              </MotionNav>
+              <div className="close-btn" onClick={() => setOpenMode(false)}>
+                <span></span>
+              </div>
+            </OpenMenu>
+          )}
+        </AnimatePresence>
       </NavbarStyle>
     </Container>
   );
 }
+const MotionNav = styled(motion.ul)`
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around !important;
+  align-items: center;
+`;
+const OpenMenu = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.colors.white};
+
+  .close-btn {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 4rem;
+    right: 6rem;
+    span {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: relative;
+    }
+    span::before,
+    span::after {
+      content: "";
+      display: inline-block;
+      height: 0.4rem;
+      width: 100%;
+      position: absolute;
+      top: 45%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      background-color: ${(props) => props.theme.colors.black};
+      transition: transform 0.3s ease-in-out;
+    }
+    span::before {
+      transform: rotate(45deg);
+    }
+    span::after {
+      transform: rotate(-45deg);
+    }
+  }
+`;
+
 const NavbarStyle = styled.div`
   min-height: 20vh;
   display: flex;
@@ -52,14 +137,14 @@ const NavbarStyle = styled.div`
     cursor: pointer;
     span {
       width: 100%;
-      height: 5px;
+      height: 0.5rem;
       display: inline-block;
       background-color: ${(props) => props.theme.colors.black};
 
       &::before {
         content: "";
         width: 100%;
-        height: 5px;
+        height: 0.5rem;
         display: inline-block;
         position: absolute;
         top: 0;
@@ -69,7 +154,7 @@ const NavbarStyle = styled.div`
       &::after {
         content: "";
         width: 100%;
-        height: 5px;
+        height: 0.5rem;
         display: inline-block;
         position: absolute;
         bottom: 0;
@@ -79,36 +164,42 @@ const NavbarStyle = styled.div`
     }
   }
 
-  ul {
+  .main-nav-list {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
 
-    li {
-      text-transform: capitalize;
-      font-size: 2rem;
-      font-weight: 500;
-      padding: 1.4rem 2.8rem;
-      position: relative;
-      z-index: 1;
-      cursor: pointer;
-      transition: color 0.3s ease-in-out;
-      &:hover {
-        color: ${(props) => props.theme.colors.white};
-      }
-      &:active {
-        color: ${(props) => props.theme.colors.blackLi};
-      }
-      @media (max-width: 900px) {
-        padding: 1.2rem 2.4rem;
-      }
+    /* @media (max-width: 1200px) {
+      font-size: 4rem !important;
+    } */
+  }
+  .main-nav-item {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 1.4rem 2.8rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: ${(props) => props.theme.colors.white};
+    }
+    &:active {
+      color: ${(props) => props.theme.colors.blackLi};
+    }
+    @media (max-width: 900px) {
+      padding: 1.2rem 2.4rem;
+    }
+    &.hidden {
       @media (max-width: 768px) {
         display: none;
       }
     }
-    li::before {
+    &::before {
       content: "";
       width: 100%;
       height: 0;
@@ -121,14 +212,10 @@ const NavbarStyle = styled.div`
       transition: all 0.1s ease-in-out;
     }
 
-    li:hover::before {
+    &:hover::before {
       height: 100%;
       transform: skew(0deg);
     }
-
-    /* @media (max-width: 1200px) {
-      font-size: 4rem !important;
-    } */
   }
 `;
 
@@ -156,6 +243,7 @@ const Logo = styled.span`
   }
   @media (max-width: 768px) {
     width: 100%;
+    display: block !important;
   }
 `;
 export default Navbar;

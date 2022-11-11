@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Slider from "../Components/Slider";
+import Footer from "../Components/Footer";
 import { Container, Btn } from "../style";
 
 function Home() {
@@ -20,6 +21,9 @@ function Home() {
         </HomePage>
       </Container>
       <Slider />
+      <Container>
+        <Footer />
+      </Container>
     </>
   );
 }

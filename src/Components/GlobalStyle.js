@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: boreder-box;
     }
     html{
-        box-sizing: inherit;
+        box-sizing: border-box;
         font-size: 62.5%;
         font-weight: 300;
         font-family: 'Poppins', sans-serif;
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2.4rem;
     }
     h5{
-        font-size: 20rem;
+        font-size: 2rem;
     }
     p{
         font-size: 1.6rem;
