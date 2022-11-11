@@ -18,5 +18,8 @@ const Foot = styled.footer`
   h5 {
     margin-bottom: 2rem;
   }
+  @media (max-width: 992px) {
+    height: 20vh;
+  }
 `;
 export default Footer;

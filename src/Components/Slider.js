@@ -35,10 +35,10 @@ function Slider() {
               slidesPerView: 1.3,
             },
             576: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.6,
             },
-            768: {
-              slidesPerView: 3,
+            992: {
+              slidesPerView: 1.7,
             },
             1200: {
               slidesPerView: 3,
@@ -74,6 +74,11 @@ const ScrollRow = styled.div`
     width: 100%;
     height: 80vh;
     object-fit: cover;
+  }
+  @media (max-width: 992px) {
+    img {
+      height: 43vh;
+    }
   }
 `;
 

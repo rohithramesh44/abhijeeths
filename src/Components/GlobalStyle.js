@@ -14,14 +14,18 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-family: 'Poppins', sans-serif;
         color: #2f3542;
+        
         @media (max-width: 992px){
-            font-size: 57% ;
+            font-size: 62% ;
+            user-select: none;
          }
         @media (max-width: 768px){
-            font-size: 50% !important;
+            font-size: 58% !important;
+            user-select: none;
          }
         @media (max-width: 576px){
-            font-size: 40% !important;
+            font-size: 56% !important;
+            user-select: none;
          }
          
 

@@ -7,16 +7,16 @@ export const menuSliderAni = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeOut",
       when: "beforeChildren",
-      staggerChildren: 0.25,
+      staggerChildren: 0.1,
     },
   },
   exit: {
     opacity: 0.8,
     x: "-100%",
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.1, ease: "easeOut" },
   },
 };
 export const itemAni = {
@@ -27,6 +27,6 @@ export const itemAni = {
   show: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.04, ease: "easeOut" },
+    transition: { duration: 0.1, ease: "easeOut" },
   },
 };

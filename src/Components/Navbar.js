@@ -23,7 +23,7 @@ function Navbar() {
             <a to="/">portfolio</a>
           </li>
           <Logo>
-            <a to="/">Abhijeeth S</a>
+            <a to="/">Abhijeeth</a>
           </Logo>
           <li className="main-nav-item hidden">
             <a to="/">About</a>
@@ -65,11 +65,13 @@ function Navbar() {
   );
 }
 const MotionNav = styled(motion.ul)`
-  height: 70%;
+  height: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around !important;
+  justify-content: space-between;
   align-items: center;
+  align-self: flex-start;
+  margin-top: 13rem;
 `;
 const OpenMenu = styled(motion.div)`
   width: 100%;
@@ -118,10 +120,19 @@ const OpenMenu = styled(motion.div)`
 `;
 
 const NavbarStyle = styled.div`
-  min-height: 20vh;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 576px) {
+    height: 10vh;
+  }
+  @media (max-width: 768px) {
+    height: 10vh;
+  }
+  @media (max-width: 992px) {
+    height: 12vh;
+  }
 
   .menu-icon {
     width: 4rem;
@@ -171,8 +182,8 @@ const NavbarStyle = styled.div`
     align-items: center;
     list-style: none;
 
-    /* @media (max-width: 1200px) {
-      font-size: 4rem !important;
+    /* @media (max-width: 576px) {
+      width: 45px;
     } */
   }
   .main-nav-item {
@@ -220,10 +231,9 @@ const NavbarStyle = styled.div`
 `;
 
 const Logo = styled.span`
-  font-size: 4.8rem !important;
+  font-size: 4.6rem !important;
   text-transform: capitalize;
   display: block;
-  text-align: center;
   cursor: pointer;
   &:hover {
     color: #2f3542 !important;
@@ -235,15 +245,26 @@ const Logo = styled.span`
     height: 0 !important;
     background-color: transparent !important;
   }
-  @media (max-width: 900px) {
-    font-size: 3.8rem !important;
+  @media (max-width: 576px) {
+    a {
+      font-size: 4rem;
+    }
+    margin-left: 3rem !important;
+  }
+  @media (max-width: 768px) {
+    /* display: block !important; */
+    a {
+      font-size: 4.4rem;
+    }
+    margin: 0 auto;
+  }
+  @media (max-width: 992px) {
+    a {
+      font-size: 4.2rem;
+    }
   }
   @media (max-width: 1200px) {
     font-size: 4rem !important;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    display: block !important;
   }
 `;
 export default Navbar;

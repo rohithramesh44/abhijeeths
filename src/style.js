@@ -4,14 +4,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 80%;
   margin: 0 auto;
-  @media (max-width: 992px) {
-    max-width: 85%;
-  }
-  @media (max-width: 768px) {
-    max-width: 90%;
-  }
+
   @media (max-width: 576px) {
-    max-width: 95%;
+    max-width: 88%;
+  }
+  @media (max-width: 992px) {
+    max-width: 90%;
   }
 `;
 export const Btn = styled.span`
@@ -23,6 +21,7 @@ export const Btn = styled.span`
   border-radius: 100px;
   border: 1px solid ${(props) => props.theme.colors.black};
   overflow: hidden;
+  user-select: none;
   cursor: pointer;
   z-index: 22;
   transition: color 0.2s ease-in-out;

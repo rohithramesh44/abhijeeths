@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Container>
-        <HomePage>
+        <HeroText>
           <div>
             <h1>
               Hello. This is Abhijeeth. Visual Designer & Artist from India :)
@@ -18,7 +18,7 @@ function Home() {
               <a to="/">View Portfolio</a>
             </Btn>
           </div>
-        </HomePage>
+        </HeroText>
       </Container>
       <Slider />
       <Container>
@@ -27,12 +27,27 @@ function Home() {
     </>
   );
 }
-const HomePage = styled.section`
+const HeroText = styled.section`
   height: 65vh;
   display: grid;
   grid-template-columns: minmax(min-content, 1fr);
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
+  @media (max-width: 576px) {
+    height: 30vh;
+    h1 {
+      font-size: 3.4rem;
+    }
+  }
+  @media (max-width: 768px) {
+    height: 40vh;
+  }
+  @media (max-width: 992px) {
+    height: 40vh;
+  }
+  @media (max-width: 1200px) {
+  }
 
   div {
     text-align: center;
