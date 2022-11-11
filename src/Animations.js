@@ -1,3 +1,25 @@
+export const pageAni = {
+  hidden: {
+    y: 300,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      easing: "ease",
+      when: "beforeChildren",
+      staggerChildren: 0.25,
+    },
+  },
+  exit: {
+    y: 300,
+    opacity: 0,
+    transition: { duration: 0.2, easing: "ease" },
+  },
+};
+
 export const menuSliderAni = {
   hidden: {
     x: "-100%",

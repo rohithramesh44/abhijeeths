@@ -19,8 +19,8 @@ function Slider() {
       <ScrollRow>
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={0}
-          slidesPerView={3}
+          spaceBetween={10}
+          slidesPerView={1.8}
           loop={true}
           centeredSlides={true}
           //   centerInsufficientSlides={true}
@@ -34,14 +34,8 @@ function Slider() {
             0: {
               slidesPerView: 1.3,
             },
-            576: {
-              slidesPerView: 1.6,
-            },
-            992: {
-              slidesPerView: 1.7,
-            },
             1200: {
-              slidesPerView: 3,
+              slidesPerView: 1.6,
             },
           }}
         >

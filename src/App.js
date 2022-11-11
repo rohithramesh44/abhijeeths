@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { AnimatePresence } from "framer-motion";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import Navbar from "./Components/Navbar";
-import Home from "./Pages/Home";
+import AnimatedRoutes from "./Components/AnimatedRoutes";
 import GlobalStyle from "./Components/GlobalStyle";
 
 function App() {
@@ -18,13 +19,11 @@ function App() {
   };
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <AnimatePresence>
-          <Navbar />
-          <Home />
-        </AnimatePresence>
-      </>
+      <GlobalStyle />
+      <Router>
+        <Navbar />
+        <AnimatedRoutes />
+      </Router>
     </ThemeProvider>
   );
 }

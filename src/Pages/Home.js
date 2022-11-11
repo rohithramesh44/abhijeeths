@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
+import { pageAni } from "../Animations";
 import Slider from "../Components/Slider";
 import Footer from "../Components/Footer";
 import { Container, Btn } from "../style";
 
 function Home() {
   return (
-    <>
+    <motion.div variants={pageAni} initial="hidden" animate="show" exit="exit">
       <Container>
         <HeroText>
           <div>
@@ -24,7 +26,7 @@ function Home() {
       <Container>
         <Footer />
       </Container>
-    </>
+    </motion.div>
   );
 }
 const HeroText = styled.section`

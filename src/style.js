@@ -56,3 +56,10 @@ export const Btn = styled.span`
     padding: 1rem 2.4rem;
   }
 `;
+export const Content = styled.div`
+  height: 90vh;
+  background-color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

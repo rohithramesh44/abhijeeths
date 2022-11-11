@@ -17,9 +17,18 @@ const Foot = styled.footer`
   justify-content: center;
   h5 {
     margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  p {
+    text-align: center;
   }
   @media (max-width: 992px) {
     height: 20vh;
+  }
+  @media (max-width: 768px) {
+    h5 {
+      font-size: 1.8rem;
+    }
   }
 `;
 export default Footer;

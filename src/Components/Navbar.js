@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { menuSliderAni, itemAni } from "../Animations";
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container } from "../style";
 
 function Navbar() {
@@ -17,19 +17,19 @@ function Navbar() {
         </div>
         <ul className="main-nav-list hidden">
           <li className="main-nav-item hidden">
-            <a to="/">home</a>
+            <Link to="/">home</Link>
           </li>
           <li className="main-nav-item hidden">
-            <a to="/">portfolio</a>
+            <Link to="/portfolio">portfolio</Link>
           </li>
           <Logo>
-            <a to="/">Abhijeeth</a>
+            <Link to="/">Abhijeeth</Link>
           </Logo>
           <li className="main-nav-item hidden">
-            <a to="/">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li className="main-nav-item hidden">
-            <a to="/">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <AnimatePresence>
@@ -42,16 +42,16 @@ function Navbar() {
             >
               <MotionNav>
                 <motion.li variants={itemAni} className="main-nav-item">
-                  <a to="/">home</a>
+                  <Link to="/">home</Link>
                 </motion.li>
                 <motion.li variants={itemAni} className="main-nav-item">
-                  <a to="/">portfolio</a>
+                  <Link to="/">portfolio</Link>
                 </motion.li>
                 <motion.li variants={itemAni} className="main-nav-item">
-                  <a to="/">About</a>
+                  <Link to="/">About</Link>
                 </motion.li>
                 <motion.li variants={itemAni} className="main-nav-item">
-                  <a to="/">Contact</a>
+                  <Link to="/">Contact</Link>
                 </motion.li>
               </MotionNav>
               <div className="close-btn" onClick={() => setOpenMode(false)}>
@@ -84,6 +84,10 @@ const OpenMenu = styled(motion.div)`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.white};
+
+  ul {
+    list-style: none;
+  }
 
   .close-btn {
     width: 3rem;
@@ -181,16 +185,19 @@ const NavbarStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     list-style: none;
-
-    /* @media (max-width: 576px) {
-      width: 45px;
-    } */
   }
-  .main-nav-item {
+  .main-nav-item.hidden {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .main-nav-item > a {
     text-transform: capitalize;
     font-size: 2rem;
     font-weight: 400;
+    text-decoration: none;
     padding: 1.4rem 2.8rem;
+    color: ${(props) => props.theme.colors.black};
     position: relative;
     z-index: 1;
     cursor: pointer;
@@ -205,11 +212,7 @@ const NavbarStyle = styled.div`
     @media (max-width: 900px) {
       padding: 1.2rem 2.4rem;
     }
-    &.hidden {
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
+
     &::before {
       content: "";
       width: 100%;
@@ -244,6 +247,10 @@ const Logo = styled.span`
   &:hover::before {
     height: 0 !important;
     background-color: transparent !important;
+  }
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.black};
   }
   @media (max-width: 576px) {
     a {
