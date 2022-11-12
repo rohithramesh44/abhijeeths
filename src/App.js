@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import { Container } from "./style";
 import AnimatedRoutes from "./Components/AnimatedRoutes";
 import GlobalStyle from "./Components/GlobalStyle";
 
@@ -21,8 +22,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <Navbar />
-        <AnimatedRoutes />
+        <AnimatePresence>
+          <Navbar />
+          <AnimatedRoutes />
+          <Container>
+            <Footer />
+          </Container>
+        </AnimatePresence>
       </Router>
     </ThemeProvider>
   );

@@ -1,14 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Content } from "../style";
 import { pageAni } from "../Animations";
+import BannerText from "../Components/BannerText";
+import WorksGallery from "../Components/WorksGallery";
 
-function Porfolio() {
+function Porfolio({ works }) {
+  // console.log(works);
   return (
     <motion.div variants={pageAni} initial="hidden" animate="show" exit="exit">
-      <Content>
-        <h1>Portfolio</h1>
-      </Content>
+      <BannerText />
+      <WorksGallery works={works} />
     </motion.div>
   );
 }

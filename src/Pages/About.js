@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import { Content } from "../style";
 import { pageAni } from "../Animations";
 
 function About() {
@@ -12,11 +12,5 @@ function About() {
     </motion.div>
   );
 }
-const Content = styled.div`
-  height: 90vh;
-  background-color: wheat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+
 export default About;

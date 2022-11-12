@@ -1,4 +1,3 @@
-import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -11,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     html{
         box-sizing: border-box;
         font-size: 62.5%;
-        font-weight: 300;
+        font-weight: 400 !important;
         font-family: 'Poppins', sans-serif;
         color: #2f3542;
         
@@ -32,21 +31,26 @@ const GlobalStyle = createGlobalStyle`
     }
     h1{
         font-size: 4.8rem;
+        font-weight: 400;
     }
     h2{
         font-size: 4rem;
     }
     h3{
         font-size: 3.2rem;
+        
     }
     h4{
         font-size: 2.4rem;
+        
     }
     h5{
         font-size: 2rem;
+        
     }
     p{
         font-size: 1.6rem;
+        line-height: 2.8rem;
     }
     
 

@@ -14,9 +14,9 @@ export const pageAni = {
     },
   },
   exit: {
-    y: 300,
+    // y: 300,
     opacity: 0,
-    transition: { duration: 0.2, easing: "ease" },
+    transition: { delay: 0.08, duration: 0.1, easing: "ease" },
   },
 };
 
@@ -38,7 +38,10 @@ export const menuSliderAni = {
   exit: {
     opacity: 0.8,
     x: "-100%",
-    transition: { duration: 0.1, ease: "easeOut" },
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
   },
 };
 export const itemAni = {

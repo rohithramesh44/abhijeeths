@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 import { pageAni } from "../Animations";
 import Slider from "../Components/Slider";
-import Footer from "../Components/Footer";
 import { Container, Btn } from "../style";
 
 function Home() {
@@ -23,9 +22,6 @@ function Home() {
         </HeroText>
       </Container>
       <Slider />
-      <Container>
-        <Footer />
-      </Container>
     </motion.div>
   );
 }

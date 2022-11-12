@@ -41,17 +41,33 @@ function Navbar() {
               exit="exit"
             >
               <MotionNav>
-                <motion.li variants={itemAni} className="main-nav-item">
+                <motion.li
+                  variants={itemAni}
+                  className="main-nav-item"
+                  onClick={() => setOpenMode(false)}
+                >
                   <Link to="/">home</Link>
                 </motion.li>
-                <motion.li variants={itemAni} className="main-nav-item">
-                  <Link to="/">portfolio</Link>
+                <motion.li
+                  variants={itemAni}
+                  className="main-nav-item"
+                  onClick={() => setOpenMode(false)}
+                >
+                  <Link to="/portfolio">portfolio</Link>
                 </motion.li>
-                <motion.li variants={itemAni} className="main-nav-item">
-                  <Link to="/">About</Link>
+                <motion.li
+                  variants={itemAni}
+                  className="main-nav-item"
+                  onClick={() => setOpenMode(false)}
+                >
+                  <Link to="/about">About</Link>
                 </motion.li>
-                <motion.li variants={itemAni} className="main-nav-item">
-                  <Link to="/">Contact</Link>
+                <motion.li
+                  variants={itemAni}
+                  className="main-nav-item"
+                  onClick={() => setOpenMode(false)}
+                >
+                  <Link to="/contact">Contact</Link>
                 </motion.li>
               </MotionNav>
               <div className="close-btn" onClick={() => setOpenMode(false)}>
