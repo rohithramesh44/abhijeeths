@@ -15,6 +15,7 @@ function AnimatedRoutes() {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.key}>
         <Route path="/" element={<Home />} />
+        <Route path="/abhijeeths" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio works={works} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
