@@ -1,21 +1,34 @@
 {
   "files": {
     "main.css": "/abhijeeths/static/css/main.46cef12e.css",
-    "main.js": "/abhijeeths/static/js/main.bbf27a5c.js",
+    "main.js": "/abhijeeths/static/js/main.dd7edde8.js",
     "static/js/787.00b35a20.chunk.js": "/abhijeeths/static/js/787.00b35a20.chunk.js",
+    "static/media/work-9.jpg": "/abhijeeths/static/media/work-9.f34675ef9946e1a978ba.jpg",
+    "static/media/work-7.jpg": "/abhijeeths/static/media/work-7.c482dd2a57c5b8991921.jpg",
     "static/media/scroll-1.jpg": "/abhijeeths/static/media/scroll-1.3934064c89c1271255ab.jpg",
     "static/media/scroll-4.jpg": "/abhijeeths/static/media/scroll-4.9f6c112b594bec47ea79.jpg",
+    "static/media/work-6.jpg": "/abhijeeths/static/media/work-6.068f6289ced250892f0c.jpg",
     "static/media/scroll-6.jpg": "/abhijeeths/static/media/scroll-6.801776817b01e34967b6.jpg",
     "static/media/scroll-2.jpg": "/abhijeeths/static/media/scroll-2.f20f8672d7103f71b456.jpg",
+    "static/media/work-13.jpg": "/abhijeeths/static/media/work-13.ed3eb581350376db5afa.jpg",
+    "static/media/work-4.jpg": "/abhijeeths/static/media/work-4.2f22f36bf08b3b9f7ddf.jpg",
+    "static/media/work-5.jpg": "/abhijeeths/static/media/work-5.1893138a6ec2346f3930.jpg",
+    "static/media/work-12.jpg": "/abhijeeths/static/media/work-12.76ac3e13820a9cdad306.jpg",
+    "static/media/work-3.jpg": "/abhijeeths/static/media/work-3.ac313fac4fa83f2652ab.jpg",
+    "static/media/work-2.jpg": "/abhijeeths/static/media/work-2.c626f720a07fecf1badb.jpg",
+    "static/media/work-8.jpg": "/abhijeeths/static/media/work-8.788ad42b7b991aaf62ca.jpg",
+    "static/media/work-10.jpg": "/abhijeeths/static/media/work-10.60f8d00ed8eeada28add.jpg",
     "static/media/scroll-3.jpg": "/abhijeeths/static/media/scroll-3.44cc4c3a90f2c3be8a27.jpg",
+    "static/media/work-1.jpg": "/abhijeeths/static/media/work-1.71afc245ed08597eaaf6.jpg",
+    "static/media/work-11.jpg": "/abhijeeths/static/media/work-11.5164e9e15fde649d2401.jpg",
     "static/media/scroll-5.jpg": "/abhijeeths/static/media/scroll-5.573b38527d9f85529bf5.jpg",
     "index.html": "/abhijeeths/index.html",
     "main.46cef12e.css.map": "/abhijeeths/static/css/main.46cef12e.css.map",
-    "main.bbf27a5c.js.map": "/abhijeeths/static/js/main.bbf27a5c.js.map",
+    "main.dd7edde8.js.map": "/abhijeeths/static/js/main.dd7edde8.js.map",
     "787.00b35a20.chunk.js.map": "/abhijeeths/static/js/787.00b35a20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46cef12e.css",
-    "static/js/main.bbf27a5c.js"
+    "static/js/main.dd7edde8.js"
   ]
 }
